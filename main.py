@@ -11,7 +11,7 @@ def create_cook_book():
             ingridient_list = []
             for i in range(count_ingridients):
                 new_shop_list_item = {}
-                ingridient = f.readline().strip().split('|')
+                ingridient = f.readline().strip().split(' | ') # пробелы попадают в элементы списка, потому разделитель с пробелами слева и с права.
                 new_shop_list_item['ingridient_name'] = ingridient[0]
                 new_shop_list_item['quantity'] = int(ingridient[1])
                 new_shop_list_item['measure'] = ingridient[2]
@@ -20,7 +20,7 @@ def create_cook_book():
             f.readline()
     return cook_book
 
-create_cook_book()    
+   
     
 
 def get_shop_list_by_dishes(dishes, person_count, cook_book):
@@ -33,8 +33,7 @@ def get_shop_list_by_dishes(dishes, person_count, cook_book):
                 shop_list[new_shop_list_item['ingridient_name']] = new_shop_list_item
             else:
                 shop_list[new_shop_list_item['ingridient_name']]['quantity']\
-                += new_shop_list_item['quantity']
-                      
+                += new_shop_list_item['quantity']                
     return shop_list
 
 def print_shop_list(shop_list):
