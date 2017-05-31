@@ -18,7 +18,7 @@ def create_cook_book():
                 ingridient_list.append(new_shop_list_item)
             cook_book[dish] = ingridient_list
             f.readline()
-    return cook_book   
+    return cook_book
     
 
 def get_shop_list_by_dishes(dishes, person_count, cook_book):
