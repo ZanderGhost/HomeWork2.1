@@ -11,16 +11,14 @@ def create_cook_book():
             ingridient_list = []
             for i in range(count_ingridients):
                 new_shop_list_item = {}
-                ingridient = f.readline().strip().split('|')
+                ingridient = f.readline().strip().split(' | ')
                 new_shop_list_item['ingridient_name'] = ingridient[0]
                 new_shop_list_item['quantity'] = int(ingridient[1])
                 new_shop_list_item['measure'] = ingridient[2]
                 ingridient_list.append(new_shop_list_item)
             cook_book[dish] = ingridient_list
             f.readline()
-    return cook_book
-
-create_cook_book()    
+    return cook_book    
     
 
 def get_shop_list_by_dishes(dishes, person_count, cook_book):
